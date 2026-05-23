@@ -452,8 +452,8 @@ document.addEventListener("DOMContentLoaded", () => {
         <div class="formula-sheet">
           <div class="formula-sheet-header">
             <span class="drawer-resource-eyebrow">Grade 11 Formula Sheet</span>
-            <h4>${subject.name} Units 1-14</h4>
-            <p>All key equations grouped by unit for fast revision and numerical practice.</p>
+            <h4>${subject.name} — Complete Formula Reference</h4>
+            <p>All key equations grouped by chapter for fast revision and numerical practice.</p>
           </div>
           ${subject.formulaSheet.map(unit => `
             <section class="formula-unit">
