@@ -79,45 +79,346 @@ const SUBJECTS_DATA = {
     pdfUrl: "https://drive.google.com/uc?export=download&id=1Cm35MVLOHUK45FU9ln0FwJtwD3aB-I2f",
     sourceUrl: "https://studyplusplus.com/fbise/11/mathematics",
     bookUrl: "https://studyplusplus.com/fbise/books/11/mathematics",
-    description: "Master quadratic structures, synthetic divisions, ratio theorems, and coordinate geometry theorems formulated by NBF.",
+    description: "Master complex numbers, matrices, vectors, sequences, polynomials, permutations, induction, and trigonometry as formulated in the NBF Grade 11 book.",
     isHero: true,
     gridSize: "large",
     difficulty: "Medium-Hard",
-    nbfChaptersCount: 13,
+    nbfChaptersCount: 9,
     chapters: [
       {
         num: 1,
-        title: "Quadratic Equations",
-        summary: "Introduction to second-degree equations, standard forms, and solution methods (Factorization, Completing the Square, and the Quadratic Formula).",
+        title: "Complex Numbers",
+        summary: "Complex numbers extend the real number system by introducing the imaginary unit i, where i² = −1. Every complex number is written as z = a + bi, where a is the real part and b is the imaginary part. The chapter covers arithmetic operations, modulus, conjugate, polar form, and De Moivre's theorem.",
         formulas: [
-          { name: "Standard Quadratic Form", equation: "a*x² + b*x + c = 0", description: "Where a ≠ 0. The standard format of a second-degree polynomial equation." },
-          { name: "Quadratic Formula", equation: "x = [-b ± √(b² - 4ac)] / (2a)", description: "The general algebraic formula used to find the roots of any quadratic equation." }
+          { name: "Standard Form", equation: "z = a + bi", description: "Where a is the real part (Re z) and b is the imaginary part (Im z). i is the imaginary unit with i² = −1." },
+          { name: "Modulus (Absolute Value)", equation: "|z| = √(a² + b²)", description: "The distance of z from the origin in the Argand plane." },
+          { name: "Conjugate", equation: "z̄ = a − bi", description: "Obtained by changing the sign of the imaginary part. z · z̄ = |z|²." },
+          { name: "Polar / Trigonometric Form", equation: "z = r(cosθ + i sinθ)", description: "Where r = |z| is the modulus and θ = arg(z) is the argument (angle). Also written as z = r·cis θ." },
+          { name: "De Moivre's Theorem", equation: "zⁿ = rⁿ(cos nθ + i sin nθ)", description: "Used to compute powers and roots of complex numbers in polar form." },
+          { name: "Product of Conjugates", equation: "z · z̄ = a² + b² = |z|²", description: "The product of a complex number with its conjugate is always a real number equal to the square of its modulus." }
         ],
         definitions: [
-          { term: "Quadratic Equation", text: "An equation which contains the square of the unknown (variable) quantity, but no higher power. It is also known as a second-degree equation." },
-          { term: "Completing the Square", text: "A algebraic method used to solve quadratic equations by converting a quadratic polynomial into a perfect square trinomial." }
+          { term: "Complex Number", text: "A number of the form z = a + bi, where a and b are real numbers and i = √−1. The set of all complex numbers is denoted by ℂ." },
+          { term: "Imaginary Unit (i)", text: "A number defined by the property i² = −1. It is the fundamental building block of all complex numbers." },
+          { term: "Real Part", text: "The real component 'a' in z = a + bi, written as Re(z) = a." },
+          { term: "Imaginary Part", text: "The coefficient 'b' of i in z = a + bi, written as Im(z) = b." },
+          { term: "Conjugate of z", text: "If z = a + bi, then its conjugate is z̄ = a − bi. Conjugates are reflections across the real axis in the Argand plane." },
+          { term: "Modulus of z", text: "The non-negative real number |z| = √(a² + b²), representing the distance of z from the origin in the Argand diagram." },
+          { term: "Argument of z", text: "The angle θ that the line segment from the origin to z makes with the positive real axis, measured in radians." },
+          { term: "Polar Form", text: "The representation z = r(cosθ + i sinθ), where r is the modulus and θ is the argument of z." },
+          { term: "Argand Diagram / Plane", text: "A 2D coordinate system where the horizontal axis represents real numbers and the vertical axis represents imaginary numbers." }
         ],
         shortQA: [
-          { q: "How many roots does a quadratic equation have?", a: "A quadratic equation always has exactly two roots (which can be real, rational, irrational, or imaginary), since its degree is 2." },
-          { q: "Write the three main methods to solve a quadratic equation.", a: "The three main methods are: 1) Factorization (splitting the middle term), 2) Completing the Square, and 3) Using the Quadratic Formula." }
-        ]
+          { q: "What is the value of i², i³, and i⁴?", a: "i² = −1, i³ = i² × i = −i, i⁴ = (i²)² = (−1)² = 1. The powers of i cycle with period 4: i, −1, −i, 1, i, ..." },
+          { q: "How do you add two complex numbers?", a: "Add real parts and imaginary parts separately: (a + bi) + (c + di) = (a + c) + (b + d)i." },
+          { q: "How do you multiply two complex numbers?", a: "Use the FOIL method: (a + bi)(c + di) = ac + adi + bci + bdi² = (ac − bd) + (ad + bc)i, since i² = −1." },
+          { q: "How do you divide complex numbers?", a: "Multiply both numerator and denominator by the conjugate of the denominator: (a + bi)/(c + di) = [(a + bi)(c − di)] / (c² + d²)." },
+          { q: "State De Moivre's Theorem and give its use.", a: "De Moivre's theorem states that [r(cosθ + i sinθ)]ⁿ = rⁿ(cos nθ + i sin nθ). It is used to raise complex numbers in polar form to any power and to find nth roots of complex numbers." }
+        ],
+        quiz: {
+          q: "For z = 3 + 4i, what is the modulus |z|?",
+          options: ["5", "7", "1", "12"],
+          correctIdx: 0,
+          explanation: "|z| = √(3² + 4²) = √(9 + 16) = √25 = 5. This is a direct application of |z| = √(a² + b²)."
+        }
       },
       {
         num: 2,
-        title: "Theory of Quadratic Equations",
-        summary: "Explores the nature of roots using the discriminant, symmetric functions of roots, and synthetic division.",
+        title: "Matrices and Determinants",
+        summary: "A matrix is a rectangular array of numbers arranged in rows and columns. This chapter covers matrix operations (addition, scalar multiplication, matrix multiplication), transpose, determinants of 2×2 and 3×3 matrices, adjoint, inverse, and solving systems of linear equations using Cramer's Rule and matrix inversion.",
         formulas: [
-          { name: "Discriminant", equation: "D = b² - 4ac", description: "Determines the nature of roots. D > 0 (Real/Distinct), D = 0 (Real/Equal), D < 0 (Imaginary)." },
-          { name: "Sum of Roots", equation: "α + β = -b / a", description: "Relationship between roots α, β and coefficients of ax² + bx + c = 0." },
-          { name: "Product of Roots", equation: "α * β = c / a", description: "Product relationship of roots." }
+          { name: "Determinant of 2×2 Matrix", equation: "det(A) = |A| = ad − bc, for A = [[a,b],[c,d]]", description: "The determinant of a 2×2 matrix is the difference of the products of diagonals." },
+          { name: "Determinant of 3×3 Matrix (Expansion)", equation: "|A| = a₁₁(a₂₂a₃₃ − a₂₃a₃₂) − a₁₂(a₂₁a₃₃ − a₂₃a₃₁) + a₁₃(a₂₁a₃₂ − a₂₂a₃₁)", description: "Cofactor expansion along the first row." },
+          { name: "Inverse of a Matrix", equation: "A⁻¹ = (1 / |A|) × adj(A)", description: "Exists only if |A| ≠ 0 (non-singular matrix). adj(A) is the transpose of the cofactor matrix." },
+          { name: "Cramer's Rule (2 unknowns)", equation: "x = |Aₓ| / |A|,  y = |Aᵧ| / |A|", description: "Where |A| is the coefficient matrix determinant, |Aₓ| replaces the x-column with constants, |Aᵧ| replaces the y-column." },
+          { name: "Matrix Multiplication", equation: "(AB)ᵢⱼ = Σₖ Aᵢₖ Bₖⱼ", description: "Element (i,j) of AB is the dot product of row i of A and column j of B. Requires columns of A = rows of B." },
+          { name: "Transpose", equation: "(Aᵀ)ᵢⱼ = Aⱼᵢ", description: "The transpose of A is obtained by interchanging rows and columns." }
         ],
         definitions: [
-          { term: "Discriminant", text: "The algebraic expression (b² - 4ac) that determines the characteristics (nature) of the roots of a quadratic equation." },
-          { term: "Synthetic Division", text: "A shortcut method of polynomial division, especially when dividing by a linear factor of the form (x - a)." }
+          { term: "Matrix", text: "A rectangular array of numbers (or algebraic expressions) arranged in rows and columns, enclosed in square brackets. Denoted by capital letters." },
+          { term: "Order of a Matrix", text: "Described as m × n, where m is the number of rows and n is the number of columns." },
+          { term: "Square Matrix", text: "A matrix with an equal number of rows and columns (m = n)." },
+          { term: "Identity Matrix (I)", text: "A square matrix with 1s on the main diagonal and 0s everywhere else. AI = IA = A for any compatible matrix A." },
+          { term: "Singular Matrix", text: "A square matrix whose determinant is zero. A singular matrix has no inverse." },
+          { term: "Non-Singular Matrix", text: "A square matrix with a non-zero determinant. It is invertible." },
+          { term: "Adjoint of a Matrix", text: "The transpose of the cofactor matrix of a square matrix A, denoted adj(A)." },
+          { term: "Cofactor", text: "The cofactor Cᵢⱼ of element aᵢⱼ is (−1)^(i+j) times the minor Mᵢⱼ (the determinant of the submatrix obtained by deleting row i and column j)." },
+          { term: "Cramer's Rule", text: "A method of solving a system of linear equations with a unique solution, using determinants of coefficient and modified matrices." }
         ],
         shortQA: [
-          { q: "What is the nature of roots if the discriminant is a perfect square?", a: "If the discriminant (b² - 4ac) is positive and a perfect square (with rational coefficients), the roots are real, rational, and unequal." }
-        ]
+          { q: "Under what condition does a matrix have an inverse?", a: "A matrix has an inverse (is invertible) if and only if its determinant is non-zero, i.e., |A| ≠ 0. Such a matrix is called non-singular." },
+          { q: "What is the difference between a row matrix and a column matrix?", a: "A row matrix (row vector) has exactly one row and any number of columns (1 × n), while a column matrix (column vector) has exactly one column and any number of rows (m × 1)." },
+          { q: "When is matrix multiplication defined?", a: "AB is defined only when the number of columns of A equals the number of rows of B. If A is m × n and B is n × p, then AB is m × p." },
+          { q: "State two properties of the transpose operation.", a: "1) (Aᵀ)ᵀ = A (double transpose returns the original). 2) (AB)ᵀ = BᵀAᵀ (transpose reverses the order of multiplication)." },
+          { q: "How do you find the inverse of a 2×2 matrix A = [[a,b],[c,d]]?", a: "A⁻¹ = (1/(ad−bc)) × [[d, −b],[−c, a]], provided ad − bc ≠ 0. Swap main diagonal elements, negate off-diagonal elements, then divide by the determinant." }
+        ],
+        quiz: {
+          q: "For matrix A = [[2, 3],[1, 4]], what is the determinant |A|?",
+          options: ["5", "11", "−5", "8"],
+          correctIdx: 0,
+          explanation: "det(A) = (2)(4) − (3)(1) = 8 − 3 = 5. For a 2×2 matrix [[a,b],[c,d]], det = ad − bc."
+        }
+      },
+      {
+        num: 3,
+        title: "Vectors",
+        summary: "Vectors are physical or geometric quantities possessing both magnitude and direction. This chapter covers vector algebra in 2D and 3D, addition, scalar (dot) product, vector (cross) product, and their geometric applications such as finding angles, areas, and projections.",
+        formulas: [
+          { name: "Magnitude of Vector", equation: "|A| = √(Aₓ² + Aᵧ² + A_z²)", description: "The length or magnitude of a 3D vector A = Aₓi + Aᵧj + A_z k." },
+          { name: "Unit Vector", equation: "Â = A / |A|", description: "A vector of magnitude 1 in the direction of A." },
+          { name: "Scalar (Dot) Product", equation: "A · B = |A||B| cosθ = AₓBₓ + AᵧBᵧ + A_z B_z", description: "Produces a scalar. θ is the angle between the vectors." },
+          { name: "Vector (Cross) Product", equation: "A × B = |A||B| sinθ n̂", description: "Produces a vector perpendicular to both A and B. n̂ is the unit normal from the right-hand rule." },
+          { name: "Cross Product (Determinant Form)", equation: "A × B = |i  j  k ; Aₓ Aᵧ A_z ; Bₓ Bᵧ B_z|", description: "Expand along the first row to find the component form of the cross product." },
+          { name: "Angle Between Two Vectors", equation: "cosθ = (A · B) / (|A| |B|)", description: "Derived from the dot product formula. θ = 90° when A · B = 0." },
+          { name: "Area of Parallelogram", equation: "Area = |A × B|", description: "The magnitude of the cross product equals the area of the parallelogram formed by the two vectors." },
+          { name: "Area of Triangle", equation: "Area = (1/2)|A × B|", description: "Half the parallelogram area formed by two sides of the triangle as vectors." }
+        ],
+        definitions: [
+          { term: "Vector", text: "A quantity with both magnitude and direction. Examples: displacement, velocity, force, momentum. Represented by an arrow." },
+          { term: "Scalar", text: "A quantity with magnitude only, no direction. Examples: mass, speed, temperature, distance." },
+          { term: "Position Vector", text: "A vector drawn from the origin O to a point P. If P is (x, y, z), the position vector OP = xi + yj + zk." },
+          { term: "Unit Vector", text: "A vector of magnitude 1. The unit vectors along x, y, z axes are î, ĵ, k̂ respectively." },
+          { term: "Null (Zero) Vector", text: "A vector with zero magnitude and no specific direction. Denoted by 0⃗." },
+          { term: "Scalar (Dot) Product", text: "The product A · B = |A||B|cosθ, giving a scalar. If A · B = 0 (and neither is zero), A and B are perpendicular." },
+          { term: "Vector (Cross) Product", text: "The product A × B = |A||B|sinθ n̂, giving a vector. If A × B = 0 (and neither is zero), A and B are parallel." },
+          { term: "Collinear Vectors", text: "Vectors that are parallel (or anti-parallel), i.e., they lie along the same line or parallel lines. Their cross product is zero." }
+        ],
+        shortQA: [
+          { q: "How do you determine if two vectors are perpendicular?", a: "Two non-zero vectors A and B are perpendicular (orthogonal) if and only if their dot product is zero: A · B = 0. This is because cos 90° = 0." },
+          { q: "How do you determine if two vectors are parallel?", a: "Two non-zero vectors A and B are parallel if and only if their cross product is zero: A × B = 0⃗. This is because sin 0° = sin 180° = 0." },
+          { q: "What is the physical significance of the cross product A × B?", a: "Its magnitude |A × B| gives the area of the parallelogram formed by A and B. Its direction (perpendicular to both A and B by the right-hand rule) represents rotation axes in physics, such as torque τ = r × F." },
+          { q: "What is the difference between a free vector and a position vector?", a: "A free vector can be moved parallel to itself anywhere in space without changing its meaning. A position vector is fixed at the origin and points to a specific position in space." },
+          { q: "State the commutative and anti-commutative properties of dot and cross products.", a: "Dot product is commutative: A · B = B · A. Cross product is anti-commutative: A × B = −(B × A). Reversing order in cross product reverses the direction." }
+        ],
+        quiz: {
+          q: "If A · B = 0 for two non-zero vectors, what can you conclude?",
+          options: ["They are parallel", "They are perpendicular", "They are equal", "Their magnitudes are equal"],
+          correctIdx: 1,
+          explanation: "A · B = |A||B|cosθ = 0 implies cosθ = 0, so θ = 90°. The two vectors are perpendicular (orthogonal) to each other."
+        }
+      },
+      {
+        num: 4,
+        title: "Sequences and Series",
+        summary: "A sequence is an ordered list of numbers following a rule, while a series is the sum of terms of a sequence. This chapter covers Arithmetic Progressions (AP), Geometric Progressions (GP), Arithmetic-Geometric sequences, and infinite geometric series, including their nth terms and sum formulas.",
+        formulas: [
+          { name: "nth Term of AP", equation: "aₙ = a₁ + (n − 1)d", description: "Where a₁ is the first term, d is the common difference, and n is the term number." },
+          { name: "Sum of n Terms of AP", equation: "Sₙ = n/2 × [2a₁ + (n − 1)d]  OR  Sₙ = n/2 × (a₁ + aₙ)", description: "Sum of the first n terms of an arithmetic progression." },
+          { name: "Arithmetic Mean", equation: "AM = (a + b) / 2", description: "The arithmetic mean of two numbers a and b. In an AP, any middle term equals the AM of its neighbours." },
+          { name: "nth Term of GP", equation: "aₙ = a₁ × rⁿ⁻¹", description: "Where a₁ is the first term and r is the common ratio." },
+          { name: "Sum of n Terms of GP", equation: "Sₙ = a₁(1 − rⁿ) / (1 − r),  r ≠ 1", description: "Sum of first n terms of a geometric progression. If r = 1, Sₙ = na₁." },
+          { name: "Sum of Infinite GP", equation: "S∞ = a₁ / (1 − r),  |r| < 1", description: "The sum of all terms of an infinite geometric series converges only when |r| < 1." },
+          { name: "Geometric Mean", equation: "GM = √(a × b)", description: "The geometric mean of two positive numbers a and b. In a GP, any middle term is the GM of its neighbours." }
+        ],
+        definitions: [
+          { term: "Sequence", text: "An ordered list of numbers arranged according to a definite rule. Each number in the list is called a term." },
+          { term: "Series", text: "The sum of the terms of a sequence. If the sequence is a₁, a₂, a₃, ..., the corresponding series is Sₙ = a₁ + a₂ + ... + aₙ." },
+          { term: "Arithmetic Progression (AP)", text: "A sequence in which each term after the first is obtained by adding a fixed constant called the common difference (d) to the preceding term." },
+          { term: "Common Difference (d)", text: "The constant value added to each term in an AP to get the next term. d = aₙ₊₁ − aₙ." },
+          { term: "Geometric Progression (GP)", text: "A sequence in which each term after the first is obtained by multiplying the preceding term by a fixed constant called the common ratio (r)." },
+          { term: "Common Ratio (r)", text: "The constant value by which each term in a GP is multiplied to get the next term. r = aₙ₊₁ / aₙ." },
+          { term: "Convergent Series", text: "An infinite series whose sum approaches a finite limit. An infinite GP with |r| < 1 is convergent with sum S∞ = a/(1−r)." },
+          { term: "Divergent Series", text: "An infinite series whose partial sums do not approach a finite limit. An infinite GP with |r| ≥ 1 is divergent." }
+        ],
+        shortQA: [
+          { q: "What is the condition for an infinite GP to have a finite sum?", a: "The infinite GP converges (has a finite sum) only when |r| < 1, i.e., the common ratio is between −1 and 1 (exclusive). The sum is S∞ = a₁/(1 − r)." },
+          { q: "Find the 10th term of the AP: 3, 7, 11, 15, ...", a: "Here a₁ = 3 and d = 7 − 3 = 4. Using aₙ = a₁ + (n−1)d: a₁₀ = 3 + (10−1)(4) = 3 + 36 = 39." },
+          { q: "How many terms are there in the AP: 5, 8, 11, ..., 50?", a: "a₁ = 5, d = 3, aₙ = 50. Using aₙ = a₁ + (n−1)d: 50 = 5 + (n−1)3 → 45 = 3(n−1) → n − 1 = 15 → n = 16. There are 16 terms." },
+          { q: "What is the difference between an AP and a GP?", a: "In an AP, consecutive terms have a constant difference (d = aₙ₊₁ − aₙ). In a GP, consecutive terms have a constant ratio (r = aₙ₊₁/aₙ)." },
+          { q: "Insert 3 arithmetic means between 2 and 18.", a: "With 3 means, there are 5 terms total: a₁ = 2, a₅ = 18. d = (18 − 2)/(5−1) = 16/4 = 4. The means are 6, 10, 14. Sequence: 2, 6, 10, 14, 18." }
+        ],
+        quiz: {
+          q: "What is the sum of the first 10 terms of the AP: 2, 5, 8, 11, ...?",
+          options: ["155", "145", "150", "160"],
+          correctIdx: 0,
+          explanation: "a₁ = 2, d = 3, n = 10. Sₙ = n/2 × [2a₁ + (n−1)d] = 10/2 × [4 + 27] = 5 × 31 = 155."
+        }
+      },
+      {
+        num: 5,
+        title: "Polynomials",
+        summary: "A polynomial is an expression of variables raised to non-negative integer powers. This chapter covers the Remainder Theorem, Factor Theorem, synthetic division, finding zeros of polynomials, and resolving rational expressions into Partial Fractions — a key technique for simplifying complex fractions in calculus and algebra.",
+        formulas: [
+          { name: "Remainder Theorem", equation: "When p(x) is divided by (x − a), the remainder R = p(a)", description: "To find the remainder when a polynomial p(x) is divided by (x − a), simply substitute x = a into p(x)." },
+          { name: "Factor Theorem", equation: "(x − a) is a factor of p(x) ⟺ p(a) = 0", description: "A special case of the Remainder Theorem: if the remainder is zero, then (x − a) is a factor." },
+          { name: "Synthetic Division Step", equation: "Bring down leading coefficient; multiply by root; add to next coefficient; repeat", description: "An efficient shorthand for dividing a polynomial by a linear factor (x − a)." },
+          { name: "Partial Fractions (Distinct Linear Factors)", equation: "p(x)/[(x−a)(x−b)] = A/(x−a) + B/(x−b)", description: "Resolve by multiplying both sides by the denominator and comparing coefficients or substituting values." },
+          { name: "Partial Fractions (Repeated Linear Factor)", equation: "p(x)/(x−a)² = A/(x−a) + B/(x−a)²", description: "Each power of the repeated factor gets its own fraction term." },
+          { name: "Partial Fractions (Irreducible Quadratic)", equation: "p(x)/[(x−a)(x²+bx+c)] = A/(x−a) + (Bx+C)/(x²+bx+c)", description: "The numerator of an irreducible quadratic factor must be a linear expression (Bx + C)." }
+        ],
+        definitions: [
+          { term: "Polynomial", text: "An algebraic expression consisting of variables (x), coefficients, and non-negative integer exponents. General form: pₙxⁿ + pₙ₋₁xⁿ⁻¹ + ... + p₁x + p₀." },
+          { term: "Degree of a Polynomial", text: "The highest power of the variable in the polynomial. Example: 3x⁴ + 2x² + 1 has degree 4." },
+          { term: "Zero (Root) of a Polynomial", text: "A value of x for which p(x) = 0. If (x − a) is a factor of p(x), then x = a is a zero." },
+          { term: "Remainder Theorem", text: "When polynomial p(x) is divided by (x − a), the remainder equals p(a). This avoids long division for finding remainders." },
+          { term: "Factor Theorem", text: "A consequence of the Remainder Theorem: (x − a) is a factor of p(x) if and only if p(a) = 0." },
+          { term: "Synthetic Division", text: "A compact method of dividing a polynomial by a linear factor (x − a) using only the coefficients, without writing variables." },
+          { term: "Partial Fractions", text: "The process of decomposing a proper rational fraction (degree of numerator < degree of denominator) into a sum of simpler fractions." },
+          { term: "Proper Rational Fraction", text: "A fraction p(x)/q(x) where the degree of p(x) is less than the degree of q(x). If not proper, perform polynomial division first." }
+        ],
+        shortQA: [
+          { q: "State the Remainder Theorem and give an example.", a: "When p(x) is divided by (x − a), the remainder = p(a). Example: find the remainder when p(x) = x³ − 2x + 5 is divided by (x − 2). R = p(2) = 8 − 4 + 5 = 9." },
+          { q: "How does the Factor Theorem differ from the Remainder Theorem?", a: "The Remainder Theorem gives the remainder R = p(a) for any division by (x − a). The Factor Theorem is a special case: if R = p(a) = 0, then (x − a) is a factor of p(x)." },
+          { q: "Show that (x − 2) is a factor of p(x) = x³ − 3x² + 4.", a: "By the Factor Theorem, p(2) must be zero. p(2) = 8 − 12 + 4 = 0. Since p(2) = 0, (x − 2) is a factor." },
+          { q: "What condition must be satisfied before resolving into partial fractions?", a: "The rational fraction must be proper, i.e., the degree of the numerator must be less than the degree of the denominator. If not, divide first to obtain a polynomial plus a proper fraction." },
+          { q: "Find the zeros of p(x) = x² − 5x + 6.", a: "Factoring: x² − 5x + 6 = (x − 2)(x − 3). Setting each factor to zero: x − 2 = 0 → x = 2 and x − 3 = 0 → x = 3. The zeros are x = 2 and x = 3." }
+        ],
+        quiz: {
+          q: "What is the remainder when p(x) = x³ + 2x² − x + 3 is divided by (x − 1)?",
+          options: ["5", "3", "1", "7"],
+          correctIdx: 0,
+          explanation: "By the Remainder Theorem, R = p(1) = 1 + 2 − 1 + 3 = 5."
+        }
+      },
+      {
+        num: 6,
+        title: "Permutation, Combination and Probability",
+        summary: "Permutations count arrangements where order matters; combinations count selections where order does not matter. The chapter also introduces probability as the ratio of favourable outcomes to total outcomes, covering classical probability and the addition rule.",
+        formulas: [
+          { name: "Factorial", equation: "n! = n × (n−1) × (n−2) × ... × 2 × 1;  0! = 1", description: "The product of all positive integers up to n. By definition, 0! = 1." },
+          { name: "Permutation Formula", equation: "P(n, r) = nPr = n! / (n − r)!", description: "Number of ways to arrange r distinct objects chosen from n distinct objects (order matters)." },
+          { name: "Combination Formula", equation: "C(n, r) = nCr = n! / [r! × (n − r)!]", description: "Number of ways to select r objects from n distinct objects (order does not matter)." },
+          { name: "Relation between P and C", equation: "P(n, r) = r! × C(n, r)", description: "Every combination gives rise to r! permutations, so P = r! × C." },
+          { name: "Classical Probability", equation: "P(E) = n(E) / n(S)", description: "Where n(E) is the number of favourable outcomes and n(S) is the total number of equally likely outcomes in sample space S." },
+          { name: "Addition Rule (Mutually Exclusive)", equation: "P(A ∪ B) = P(A) + P(B)", description: "For mutually exclusive events (A ∩ B = ∅)." },
+          { name: "Addition Rule (General)", equation: "P(A ∪ B) = P(A) + P(B) − P(A ∩ B)", description: "The general addition rule for any two events A and B." }
+        ],
+        definitions: [
+          { term: "Permutation", text: "An arrangement of objects in a specific order. The number of permutations of n objects taken r at a time is P(n, r) = n!/(n−r)!." },
+          { term: "Combination", text: "A selection of objects without regard to order. The number of combinations of n objects taken r at a time is C(n, r) = n!/[r!(n−r)!]." },
+          { term: "Factorial (n!)", text: "The product of all positive integers from 1 to n. Special case: 0! = 1. Example: 5! = 5 × 4 × 3 × 2 × 1 = 120." },
+          { term: "Sample Space (S)", text: "The set of all possible outcomes of a random experiment." },
+          { term: "Event", text: "Any subset of the sample space. A simple event has one outcome; a compound event has more than one." },
+          { term: "Mutually Exclusive Events", text: "Two events A and B are mutually exclusive if they cannot occur simultaneously: P(A ∩ B) = 0." },
+          { term: "Complementary Events", text: "Events A and A' (not A) are complementary: P(A) + P(A') = 1. They are mutually exclusive and exhaustive." },
+          { term: "Equally Likely Outcomes", text: "Outcomes are equally likely when each outcome in the sample space has the same probability of occurrence." }
+        ],
+        shortQA: [
+          { q: "What is the key difference between permutation and combination?", a: "In permutation, order matters (arrangement). In combination, order does not matter (selection). For example, ABC and BAC are different permutations but the same combination." },
+          { q: "How many ways can 5 books be arranged on a shelf?", a: "This is a permutation of 5 objects taken all at once: P(5, 5) = 5! = 120 ways." },
+          { q: "From a group of 10 students, how many committees of 4 can be formed?", a: "Order doesn't matter (a committee), so use combinations: C(10, 4) = 10!/(4! × 6!) = (10 × 9 × 8 × 7)/(4 × 3 × 2 × 1) = 210 committees." },
+          { q: "A die is rolled. What is the probability of getting a number greater than 4?", a: "Sample space S = {1, 2, 3, 4, 5, 6}, n(S) = 6. Favourable outcomes (>4) = {5, 6}, n(E) = 2. P(E) = 2/6 = 1/3." },
+          { q: "Prove that C(n, r) = C(n, n−r).", a: "C(n, n−r) = n!/[(n−r)! × (n−(n−r))!] = n!/[(n−r)! × r!] = C(n, r). This means choosing r objects is equivalent to leaving out (n−r) objects." }
+        ],
+        quiz: {
+          q: "How many ways can a committee of 3 be chosen from 8 people?",
+          options: ["56", "336", "24", "512"],
+          correctIdx: 0,
+          explanation: "Order doesn't matter for a committee: C(8, 3) = 8!/(3! × 5!) = (8 × 7 × 6)/(3 × 2 × 1) = 336/6 = 56."
+        }
+      },
+      {
+        num: 7,
+        title: "Mathematical Induction and Binomial Theorem",
+        summary: "Mathematical induction is a proof technique for verifying statements true for all natural numbers. The Binomial Theorem gives an algebraic formula for expanding (a + b)ⁿ for any non-negative integer n, using binomial coefficients (nCr). This chapter covers the principle of induction, Pascal's triangle, the general term, and the middle term of a binomial expansion.",
+        formulas: [
+          { name: "Binomial Theorem", equation: "(a + b)ⁿ = Σᵣ₌₀ⁿ C(n,r) × aⁿ⁻ʳ × bʳ", description: "Expands (a + b)ⁿ into n + 1 terms using binomial coefficients C(n, r)." },
+          { name: "General Term (Tᵣ₊₁)", equation: "Tᵣ₊₁ = C(n, r) × aⁿ⁻ʳ × bʳ", description: "The (r+1)th term in the expansion of (a + b)ⁿ, where r = 0, 1, 2, ..., n." },
+          { name: "Number of Terms", equation: "Total terms in (a + b)ⁿ = n + 1", description: "A binomial expansion of degree n has exactly n + 1 terms." },
+          { name: "Middle Term", equation: "If n is even: T_{n/2 + 1}; If n odd: T_{(n+1)/2} and T_{(n+3)/2}", description: "For even n, there is one middle term. For odd n, there are two middle terms." },
+          { name: "Pascal's Triangle Relation", equation: "C(n, r) = C(n−1, r−1) + C(n−1, r)", description: "Each interior entry of Pascal's triangle is the sum of the two entries directly above it." }
+        ],
+        definitions: [
+          { term: "Mathematical Induction", text: "A two-step proof method to prove a statement P(n) for all natural numbers n: (1) Base step: prove P(1) is true. (2) Inductive step: assume P(k) is true and prove P(k+1) is true." },
+          { term: "Inductive Hypothesis", text: "The assumption made in the inductive step: we assume the statement P(k) is true for some arbitrary natural number k." },
+          { term: "Binomial Theorem", text: "A formula that provides the expansion of (a + b)ⁿ for any non-negative integer n as a sum of n+1 terms involving binomial coefficients." },
+          { term: "Binomial Coefficient C(n,r)", text: "The coefficient of the (r+1)th term in the expansion of (a + b)ⁿ, equal to n!/[r!(n−r)!]. Also written as ⁿCᵣ or (n choose r)." },
+          { term: "General Term", text: "Tᵣ₊₁ = C(n, r) aⁿ⁻ʳ bʳ is the general (r+1)th term of (a+b)ⁿ. Setting r to a specific value gives any particular term." },
+          { term: "Pascal's Triangle", text: "A triangular arrangement of binomial coefficients where each entry is the sum of the two above it. Row n gives the coefficients for (a+b)ⁿ." }
+        ],
+        shortQA: [
+          { q: "State the two steps of the Principle of Mathematical Induction.", a: "Step 1 (Base Case): Verify that the statement P(n) is true for n = 1. Step 2 (Inductive Step): Assume P(k) is true (inductive hypothesis), then prove P(k+1) is also true." },
+          { q: "Write the first four terms of (x + y)⁵ using the Binomial Theorem.", a: "T₁ = C(5,0)x⁵y⁰ = x⁵. T₂ = C(5,1)x⁴y = 5x⁴y. T₃ = C(5,2)x³y² = 10x³y². T₄ = C(5,3)x²y³ = 10x²y³." },
+          { q: "Find the general term in the expansion of (2x − 3y)⁶.", a: "Tᵣ₊₁ = C(6, r)(2x)⁶⁻ʳ(−3y)ʳ = C(6, r) × 2⁶⁻ʳ × (−3)ʳ × x⁶⁻ʳ × yʳ, for r = 0, 1, 2, ..., 6." },
+          { q: "How many terms are in the expansion of (a + b)¹²?", a: "The number of terms = n + 1 = 12 + 1 = 13 terms." },
+          { q: "Find the middle term in the expansion of (x + 1/x)⁸.", a: "n = 8 (even), so the middle term is T_{n/2 + 1} = T₅. T₅ = C(8, 4) x⁴ (1/x)⁴ = 70 × x⁴/x⁴ = 70." }
+        ],
+        quiz: {
+          q: "In the expansion of (a + b)ⁿ, how many terms are there?",
+          options: ["n terms", "n + 1 terms", "2n terms", "n − 1 terms"],
+          correctIdx: 1,
+          explanation: "The Binomial Theorem gives exactly n + 1 terms for (a + b)ⁿ, corresponding to r = 0, 1, 2, ..., n."
+        }
+      },
+      {
+        num: 8,
+        title: "Fundamentals of Trigonometry",
+        summary: "Trigonometry studies the relationships between angles and sides of triangles. This chapter covers angle measurement in degrees and radians, the six trigonometric ratios (sin, cos, tan, csc, sec, cot), Pythagorean identities, signs of ratios in four quadrants, and inverse trigonometric functions.",
+        formulas: [
+          { name: "Radian-Degree Conversion", equation: "π rad = 180°;  θ(rad) = θ(°) × π/180", description: "To convert degrees to radians multiply by π/180. To convert radians to degrees multiply by 180/π." },
+          { name: "Arc Length", equation: "l = r × θ", description: "Arc length l is the product of radius r and the central angle θ in radians." },
+          { name: "First Pythagorean Identity", equation: "sin²θ + cos²θ = 1", description: "Fundamental identity derived from the unit circle definition." },
+          { name: "Second Pythagorean Identity", equation: "1 + tan²θ = sec²θ", description: "Divide the first identity by cos²θ." },
+          { name: "Third Pythagorean Identity", equation: "1 + cot²θ = csc²θ", description: "Divide the first identity by sin²θ." },
+          { name: "Reciprocal Ratios", equation: "csc θ = 1/sin θ;  sec θ = 1/cos θ;  cot θ = 1/tan θ", description: "The three reciprocal trigonometric ratios." },
+          { name: "Quotient Identities", equation: "tan θ = sin θ / cos θ;  cot θ = cos θ / sin θ", description: "Tangent and cotangent expressed in terms of sine and cosine." }
+        ],
+        definitions: [
+          { term: "Angle", text: "Formed by rotating a ray from its initial position (initial side) to a terminal position (terminal side) about a fixed point (vertex). Positive angles are measured counter-clockwise." },
+          { term: "Radian", text: "The angle subtended at the centre of a circle by an arc equal in length to the radius. 1 radian ≈ 57.3°. There are 2π radians in a full circle." },
+          { term: "Trigonometric Ratios", text: "For a right-angled triangle: sin θ = opposite/hypotenuse, cos θ = adjacent/hypotenuse, tan θ = opposite/adjacent." },
+          { term: "Pythagorean Identity", text: "sin²θ + cos²θ = 1, along with its derived forms 1 + tan²θ = sec²θ and 1 + cot²θ = csc²θ." },
+          { term: "ASTC Rule (Quadrant Signs)", text: "All ratios positive in Quadrant I, Sin positive in Q-II, Tan positive in Q-III, Cos positive in Q-IV. Remembered as All Students Take Calculus." },
+          { term: "Cosecant (csc)", text: "The reciprocal of sine: csc θ = 1/sin θ = hypotenuse/opposite. Undefined when sin θ = 0." },
+          { term: "Secant (sec)", text: "The reciprocal of cosine: sec θ = 1/cos θ = hypotenuse/adjacent. Undefined when cos θ = 0." },
+          { term: "Cotangent (cot)", text: "The reciprocal of tangent: cot θ = cos θ/sin θ = adjacent/opposite. Undefined when sin θ = 0." }
+        ],
+        shortQA: [
+          { q: "Convert 150° to radians.", a: "Multiply by π/180: 150 × π/180 = 5π/6 radians." },
+          { q: "Convert 3π/4 radians to degrees.", a: "Multiply by 180/π: (3π/4) × (180/π) = 3 × 45 = 135°." },
+          { q: "Prove that sin²θ + cos²θ = 1.", a: "In a right triangle with hypotenuse h, opposite p, adjacent b: sin θ = p/h, cos θ = b/h. sin²θ + cos²θ = p²/h² + b²/h² = (p² + b²)/h² = h²/h² = 1, using Pythagoras: p² + b² = h²." },
+          { q: "In which quadrant is sin θ negative and cos θ positive?", a: "Quadrant IV (between 270° and 360°). Using ASTC: only cosine (and sec) are positive in Q-IV." },
+          { q: "Find sin θ if cos θ = 3/5 and θ is in the first quadrant.", a: "Using sin²θ + cos²θ = 1: sin²θ = 1 − 9/25 = 16/25. sin θ = 4/5 (positive in Q-I)." }
+        ],
+        quiz: {
+          q: "Which Pythagorean identity is obtained by dividing sin²θ + cos²θ = 1 by cos²θ?",
+          options: ["1 + cot²θ = csc²θ", "tan²θ + 1 = sec²θ", "sin²θ = 1 − cos²θ", "sec²θ − 1 = tan²θ"],
+          correctIdx: 1,
+          explanation: "Dividing sin²θ + cos²θ = 1 by cos²θ gives tan²θ + 1 = sec²θ, which is the same as 1 + tan²θ = sec²θ."
+        }
+      },
+      {
+        num: 9,
+        title: "Trigonometric Functions",
+        summary: "This chapter extends trigonometry to functions defined over all real numbers using the unit circle. It covers compound angle formulas (sum and difference of two angles), double-angle formulas, half-angle formulas, product-to-sum and sum-to-product identities, and their application in proving trigonometric identities and solving equations.",
+        formulas: [
+          { name: "Sin of Sum/Difference", equation: "sin(A ± B) = sin A cos B ± cos A sin B", description: "Sine compound angle formulas for addition and subtraction." },
+          { name: "Cos of Sum/Difference", equation: "cos(A ± B) = cos A cos B ∓ sin A sin B", description: "Note: the sign flips compared to the sine formula." },
+          { name: "Tan of Sum/Difference", equation: "tan(A ± B) = (tan A ± tan B) / (1 ∓ tan A tan B)", description: "Tangent compound angle identities." },
+          { name: "Double Angle (Sin)", equation: "sin 2A = 2 sin A cos A", description: "Set B = A in the sine sum formula." },
+          { name: "Double Angle (Cos)", equation: "cos 2A = cos²A − sin²A = 1 − 2sin²A = 2cos²A − 1", description: "Three equivalent forms of the cosine double-angle identity." },
+          { name: "Double Angle (Tan)", equation: "tan 2A = 2 tan A / (1 − tan²A)", description: "Set B = A in the tangent sum formula." },
+          { name: "Half Angle (Sin)", equation: "sin(A/2) = ±√[(1 − cos A)/2]", description: "Sign depends on the quadrant of A/2." },
+          { name: "Half Angle (Cos)", equation: "cos(A/2) = ±√[(1 + cos A)/2]", description: "Sign depends on the quadrant of A/2." },
+          { name: "Product to Sum", equation: "2 sin A cos B = sin(A+B) + sin(A−B)", description: "Converts a product of sin and cos into a sum." }
+        ],
+        definitions: [
+          { term: "Compound Angle", text: "An angle expressed as the sum or difference of two other angles. For example, 75° = 45° + 30° is a compound angle." },
+          { term: "Double Angle Formulas", text: "Identities that express trigonometric functions of 2A in terms of functions of A. Derived by setting B = A in compound angle formulas." },
+          { term: "Half Angle Formulas", text: "Identities expressing trig functions of A/2 in terms of cos A. Useful for exact values and integration." },
+          { term: "Period of Trigonometric Functions", text: "The period of sin x and cos x is 2π. The period of tan x and cot x is π. The period of sec x and csc x is 2π." },
+          { term: "Even Function", text: "A function f where f(−x) = f(x). Cosine is an even function: cos(−θ) = cos θ." },
+          { term: "Odd Function", text: "A function f where f(−x) = −f(x). Sine and tangent are odd functions: sin(−θ) = −sin θ, tan(−θ) = −tan θ." },
+          { term: "Trigonometric Identity", text: "An equation involving trig functions that is true for all values of the variable for which both sides are defined." }
+        ],
+        shortQA: [
+          { q: "Find the exact value of sin 75°.", a: "Write 75° = 45° + 30°. sin 75° = sin(45° + 30°) = sin 45° cos 30° + cos 45° sin 30° = (√2/2)(√3/2) + (√2/2)(1/2) = √6/4 + √2/4 = (√6 + √2)/4." },
+          { q: "Derive the double angle formula for sin 2A.", a: "Using sin(A + B) = sin A cos B + cos A sin B, set B = A: sin(A + A) = sin A cos A + cos A sin A = 2 sin A cos A. Therefore sin 2A = 2 sin A cos A." },
+          { q: "Express cos 2A in terms of sin A only.", a: "Using cos 2A = cos²A − sin²A and substituting cos²A = 1 − sin²A: cos 2A = (1 − sin²A) − sin²A = 1 − 2 sin²A." },
+          { q: "Why is cosine called an even function?", a: "Because cos(−θ) = cos θ for all θ. On a graph, an even function is symmetric about the y-axis. Cosine satisfies this: its value does not change when θ is replaced by −θ." },
+          { q: "State the period of sin x, cos x, and tan x.", a: "sin x and cos x have period 2π (they repeat every 2π radians or 360°). tan x has period π (it repeats every π radians or 180°)." }
+        ],
+        quiz: {
+          q: "Which of the following equals sin(A + B)?",
+          options: [
+            "sin A cos B − cos A sin B",
+            "sin A cos B + cos A sin B",
+            "cos A cos B − sin A sin B",
+            "cos A cos B + sin A sin B"
+          ],
+          correctIdx: 1,
+          explanation: "sin(A + B) = sin A cos B + cos A sin B. This is the standard compound angle formula for sine addition."
+        }
       }
     ]
   },
@@ -564,6 +865,123 @@ SUBJECTS_DATA.physics.chapters = [
     ]
   }
 ];
+
+const MATHS_FORMULA_SHEET = [
+  {
+    unit: "Ch 1: Complex Numbers",
+    formulas: [
+      { concept: "Standard Form", equation: "z = a + bi,  i² = −1" },
+      { concept: "Modulus", equation: "|z| = √(a² + b²)" },
+      { concept: "Conjugate", equation: "z̄ = a − bi;  z · z̄ = |z|² = a² + b²" },
+      { concept: "Polar Form", equation: "z = r(cosθ + i sinθ) = r cis θ;  r = |z|, θ = arg(z)" },
+      { concept: "De Moivre's Theorem", equation: "zⁿ = rⁿ(cos nθ + i sin nθ)" },
+      { concept: "Product", equation: "z₁z₂ = r₁r₂ cis(θ₁ + θ₂)" },
+      { concept: "Quotient", equation: "z₁/z₂ = (r₁/r₂) cis(θ₁ − θ₂)" }
+    ]
+  },
+  {
+    unit: "Ch 2: Matrices and Determinants",
+    formulas: [
+      { concept: "det of 2×2", equation: "|A| = ad − bc  for  A = [[a,b],[c,d]]" },
+      { concept: "det of 3×3 (cofactor expansion)", equation: "|A| = a₁₁C₁₁ + a₁₂C₁₂ + a₁₃C₁₃" },
+      { concept: "Cofactor", equation: "Cᵢⱼ = (−1)^(i+j) Mᵢⱼ" },
+      { concept: "Inverse", equation: "A⁻¹ = (1/|A|) × adj(A)" },
+      { concept: "Cramer's Rule", equation: "x = |Aₓ|/|A|,  y = |Aᵧ|/|A|,  z = |A_z|/|A|" },
+      { concept: "Properties", equation: "|AB| = |A||B|;  |Aᵀ| = |A|;  |A⁻¹| = 1/|A|" }
+    ]
+  },
+  {
+    unit: "Ch 3: Vectors",
+    formulas: [
+      { concept: "Magnitude", equation: "|A| = √(Aₓ² + Aᵧ² + A_z²)" },
+      { concept: "Unit Vector", equation: "Â = A / |A|" },
+      { concept: "Dot Product", equation: "A · B = |A||B|cosθ = AₓBₓ + AᵧBᵧ + A_zB_z" },
+      { concept: "Cross Product (magnitude)", equation: "|A × B| = |A||B|sinθ" },
+      { concept: "Cross Product (det form)", equation: "A × B = |î ĵ k̂; Aₓ Aᵧ A_z; Bₓ Bᵧ B_z|" },
+      { concept: "Angle between vectors", equation: "cosθ = (A · B) / (|A||B|)" },
+      { concept: "Area of parallelogram", equation: "Area = |A × B|" },
+      { concept: "Area of triangle", equation: "Area = ½|A × B|" },
+      { concept: "Perpendicularity test", equation: "A ⊥ B ⟺ A · B = 0" },
+      { concept: "Parallelism test", equation: "A ∥ B ⟺ A × B = 0" }
+    ]
+  },
+  {
+    unit: "Ch 4: Sequences and Series",
+    formulas: [
+      { concept: "AP — nth Term", equation: "aₙ = a₁ + (n − 1)d" },
+      { concept: "AP — Sum of n terms", equation: "Sₙ = n/2 [2a₁ + (n−1)d] = n/2 (a₁ + aₙ)" },
+      { concept: "Arithmetic Mean", equation: "AM = (a + b)/2" },
+      { concept: "GP — nth Term", equation: "aₙ = a₁ rⁿ⁻¹" },
+      { concept: "GP — Sum of n terms", equation: "Sₙ = a₁(1 − rⁿ)/(1 − r),  r ≠ 1" },
+      { concept: "Infinite GP (|r| < 1)", equation: "S∞ = a₁/(1 − r)" },
+      { concept: "Geometric Mean", equation: "GM = √(ab)" }
+    ]
+  },
+  {
+    unit: "Ch 5: Polynomials",
+    formulas: [
+      { concept: "Remainder Theorem", equation: "Remainder of p(x) ÷ (x − a) = p(a)" },
+      { concept: "Factor Theorem", equation: "(x − a) is a factor ⟺ p(a) = 0" },
+      { concept: "Partial Fractions — Distinct Linear", equation: "N/[(x−a)(x−b)] = A/(x−a) + B/(x−b)" },
+      { concept: "Partial Fractions — Repeated Linear", equation: "N/(x−a)² = A/(x−a) + B/(x−a)²" },
+      { concept: "Partial Fractions — Quadratic", equation: "N/[(x−a)(x²+bx+c)] = A/(x−a) + (Bx+C)/(x²+bx+c)" }
+    ]
+  },
+  {
+    unit: "Ch 6: Permutation, Combination and Probability",
+    formulas: [
+      { concept: "Factorial", equation: "n! = n(n−1)(n−2)···2·1;  0! = 1" },
+      { concept: "Permutation", equation: "P(n,r) = n!/(n−r)!" },
+      { concept: "Combination", equation: "C(n,r) = n!/[r!(n−r)!]" },
+      { concept: "Relation", equation: "P(n,r) = r! × C(n,r)" },
+      { concept: "Classical Probability", equation: "P(E) = n(E)/n(S)" },
+      { concept: "Complementary", equation: "P(A') = 1 − P(A)" },
+      { concept: "Addition Rule (general)", equation: "P(A∪B) = P(A) + P(B) − P(A∩B)" },
+      { concept: "Addition Rule (mutually exclusive)", equation: "P(A∪B) = P(A) + P(B)" }
+    ]
+  },
+  {
+    unit: "Ch 7: Mathematical Induction and Binomial Theorem",
+    formulas: [
+      { concept: "Binomial Theorem", equation: "(a+b)ⁿ = Σᵣ₌₀ⁿ C(n,r) aⁿ⁻ʳ bʳ" },
+      { concept: "General Term", equation: "Tᵣ₊₁ = C(n,r) aⁿ⁻ʳ bʳ" },
+      { concept: "Number of Terms", equation: "Total terms = n + 1" },
+      { concept: "Middle Term (n even)", equation: "T_{n/2 + 1}" },
+      { concept: "Middle Terms (n odd)", equation: "T_{(n+1)/2} and T_{(n+3)/2}" },
+      { concept: "Pascal's Relation", equation: "C(n,r) = C(n−1,r−1) + C(n−1,r)" }
+    ]
+  },
+  {
+    unit: "Ch 8: Fundamentals of Trigonometry",
+    formulas: [
+      { concept: "Degree ↔ Radian", equation: "θ_rad = θ° × π/180;  θ° = θ_rad × 180/π" },
+      { concept: "Arc Length", equation: "l = rθ  (θ in radians)" },
+      { concept: "Area of Sector", equation: "A = ½r²θ" },
+      { concept: "Pythagorean I", equation: "sin²θ + cos²θ = 1" },
+      { concept: "Pythagorean II", equation: "1 + tan²θ = sec²θ" },
+      { concept: "Pythagorean III", equation: "1 + cot²θ = csc²θ" },
+      { concept: "Reciprocals", equation: "csc θ = 1/sinθ;  sec θ = 1/cosθ;  cot θ = 1/tanθ" },
+      { concept: "Quotient", equation: "tan θ = sinθ/cosθ;  cot θ = cosθ/sinθ" }
+    ]
+  },
+  {
+    unit: "Ch 9: Trigonometric Identities (Compound Angles)",
+    formulas: [
+      { concept: "sin(A ± B)", equation: "sin(A±B) = sinA cosB ± cosA sinB" },
+      { concept: "cos(A ± B)", equation: "cos(A±B) = cosA cosB ∓ sinA sinB" },
+      { concept: "tan(A ± B)", equation: "tan(A±B) = (tanA ± tanB)/(1 ∓ tanA tanB)" },
+      { concept: "Double Angle sin", equation: "sin 2A = 2 sinA cosA" },
+      { concept: "Double Angle cos", equation: "cos 2A = cos²A − sin²A = 1 − 2sin²A = 2cos²A − 1" },
+      { concept: "Double Angle tan", equation: "tan 2A = 2tanA/(1 − tan²A)" },
+      { concept: "Half Angle sin", equation: "sin(A/2) = ±√[(1 − cosA)/2]" },
+      { concept: "Half Angle cos", equation: "cos(A/2) = ±√[(1 + cosA)/2]" },
+      { concept: "Product to Sum", equation: "2sinA cosB = sin(A+B) + sin(A−B)" },
+      { concept: "Period", equation: "sin, cos, sec, csc: 2π;  tan, cot: π" }
+    ]
+  }
+];
+
+SUBJECTS_DATA.maths.formulaSheet = MATHS_FORMULA_SHEET;
 
 const PHYSICS_FORMULA_SHEET = [
   {
