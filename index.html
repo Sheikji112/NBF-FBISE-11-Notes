@@ -1,0 +1,285 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Premium SEO Tags -->
+  <title>NBF Grade 11 Notes & Premium Study Resources</title>
+  <meta name="description" content="Immersive, editorial-designed study resources for National Book Foundation (NBF) Grade 11 syllabus. Master Physics, Maths, English, Urdu, and Computer Science with interactive tools and PDF books.">
+  <meta name="keywords" content="NBF Grade 11, FBISE Class 11, National Book Foundation, intermediate notes, Physics formulas, Maths theorems, Urdu, English, computer science, PDF books">
+  <meta name="author" content="Antigravity Senior UI Design Team">
+  
+  <!-- Styling Links -->
+  <link rel="stylesheet" href="styles.css">
+  
+  <!-- Structured data scripts (subject database must load first) -->
+  <script src="data.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+
+  <!-- Premium Editorial Navbar -->
+  <nav class="navbar" id="main-navigation">
+    <div class="navbar-container">
+      <a href="#" class="brand-logo" id="nbf-brand-logo">
+        NBF Notes <span>Grade 11</span>
+      </a>
+      <ul class="nav-links" id="navbar-menu-links">
+        <li><a href="#subjects-section" class="active">Subjects</a></li>
+        <li><a href="#toybox-section">Study Playground</a></li>
+        <li><a href="#updates-section">Recent Updates</a></li>
+      </ul>
+      <button class="cta-button" id="quick-start-notes-btn" onclick="document.getElementById('subjects-section').scrollIntoView({behavior: 'smooth'})">
+        Start Studying
+      </button>
+    </div>
+  </nav>
+
+  <!-- Section 1: Editorial Hero Header -->
+  <header class="editorial-section" id="hero-header">
+    <div class="container hero-wrapper">
+      <div class="hero-content">
+        <span class="hero-tag" id="editorial-tagline">National Book Foundation Notes</span>
+        <h1 class="hero-title" id="main-hero-title">
+          Studying, <br>
+          re-structured.
+        </h1>
+        <p class="hero-description" id="main-hero-description">
+          A premium study companion built for Grade 11 students. Visual subject cards, fast PDF book access, and tactile revision tools keep the whole FBISE study set easier to scan.
+        </p>
+        
+        <!-- Search bar component -->
+        <div class="hero-search-box" id="search-box-container">
+          <input 
+            type="text" 
+            id="hero-search-input" 
+            class="hero-search-input" 
+            placeholder="Search chapters, formulas, or definitions..."
+            aria-label="Search study resources"
+          >
+          <button class="hero-search-btn" id="search-action-btn" aria-label="Submit search query">
+            <!-- Search icon SVG -->
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+          </button>
+        </div>
+      </div>
+      
+      <!-- Asymmetric Editorial Visual Block Panel (Dropbox Style) -->
+      <div class="hero-visual-panel" id="hero-editorial-panel" aria-hidden="true">
+        <div class="visual-block visual-block-1">
+          <span class="block-title">NBF Syllabus <br>Aligned.</span>
+          <span class="block-stat">100%</span>
+        </div>
+        <div class="visual-block visual-block-2">
+          <span class="block-title">Solved <br>Chapters</span>
+          <span class="block-stat">58+</span>
+        </div>
+        <div class="visual-block visual-block-3">
+          <span class="block-title">Flash <br>Recall</span>
+          <span class="block-stat">âš¡</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Section 2: Dynamic Subject Navigator (NBF Grade 11 list) -->
+  <main class="editorial-section" id="subjects-section">
+    <div class="container">
+      <div class="section-header" id="subjects-section-header">
+        <div class="section-title-group">
+          <span class="section-num">01 / SUBJECTS</span>
+          <h2 class="section-title">Asymmetric Study Guides</h2>
+          <p class="section-subtitle">Click any subject card to slide open its comprehensive chapter summaries, formulas, and definitions.</p>
+        </div>
+      </div>
+      
+      <!-- Target Asymmetric Grid populated by JavaScript -->
+      <div class="subject-grid" id="subject-grid">
+        <!-- Rendered dynamically by app.js -->
+      </div>
+    </div>
+  </main>
+
+  <!-- Section 3: "Formula/Definition Flashcard" Toybox -->
+  <section class="editorial-section" id="toybox-section">
+    <div class="container">
+      <div class="section-header" id="toybox-section-header">
+        <div class="section-title-group">
+          <span class="section-num">02 / STUDY PLAYGROUND</span>
+          <h2 class="section-title">The Flashcard Toybox</h2>
+          <p class="section-subtitle">A tactile playground to practice key equations and theorems. Drag or scroll through the track to review topics.</p>
+        </div>
+      </div>
+
+      <div class="toybox-wrapper" id="toybox-outer-container">
+        <!-- Left: Filters selector list -->
+        <nav class="toybox-selector" id="toybox-filters" aria-label="Filter playground items by subject">
+          <!-- Rendered dynamically by app.js -->
+        </nav>
+
+        <!-- Right: Active Flashcard Play Area -->
+        <div class="flashcard-playground" id="flashcard-interactive-playground">
+          <!-- 3D transform card component -->
+          <div class="flashcard-wrapper" id="flashcard-wrapper" role="button" aria-live="polite" tabindex="0" aria-label="Study card. Click to flip.">
+            <div class="flashcard-inner" id="flashcard-inner">
+              <!-- Front Side -->
+              <div class="flashcard-face flashcard-front" id="flashcard-front">
+                <!-- Rendered dynamically by app.js -->
+              </div>
+              <!-- Back Side -->
+              <div class="flashcard-face flashcard-back" id="flashcard-back">
+                <!-- Rendered dynamically by app.js -->
+              </div>
+            </div>
+          </div>
+
+          <!-- Slider Controls -->
+          <div class="flashcard-controls" id="flashcard-controls-panel">
+            <span class="flashcard-counter" id="flashcard-count">0 / 0</span>
+            <div class="scroller-nav-group">
+              <button class="scroller-nav-btn" id="flashcard-prev-btn" aria-label="Previous flashcard">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="19" y1="12" x2="5" y2="12"></line>
+                  <polyline points="12 19 5 12 12 5"></polyline>
+                </svg>
+              </button>
+              <button class="scroller-nav-btn" id="flashcard-next-btn" aria-label="Next flashcard">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- Tactile custom preview horizontal track -->
+          <div class="tactile-chapter-track" id="tactile-chapter-track">
+            <!-- Rendered dynamically by app.js -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 4: Recent Notes Updates stream -->
+  <section class="editorial-section last-section" id="updates-section">
+    <div class="container">
+      <div class="section-header" id="updates-section-header">
+        <div class="section-title-group">
+          <span class="section-num">03 / STREAM UPDATES</span>
+          <h2 class="section-title">Recent Resources Log</h2>
+          <p class="section-subtitle">Real-time updates to our National Book Foundation study indexes.</p>
+        </div>
+      </div>
+
+      <div class="updates-wrapper" id="updates-stream-container">
+        <div class="updates-log" id="recent-updates-list">
+          <!-- Rendered dynamically by app.js -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 5: Immersive Study Drawer Overlay (Tactile Notes Drawer) -->
+  <div class="study-drawer-overlay" id="study-drawer-overlay" aria-modal="true" role="dialog">
+    <div class="study-drawer" id="study-drawer">
+      
+      <!-- Drawer Header Layout -->
+      <header class="drawer-header">
+        <button class="drawer-close-btn" id="drawer-close-btn" aria-label="Close study drawer">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+        <span class="drawer-subject-title" id="drawer-subject-title">PHYSICS â€¢ CHAPTER 10</span>
+        <h3 class="drawer-chapter-title" id="drawer-chapter-title">Simple Harmonic Motion & Waves</h3>
+        
+        <!-- Tabs Navigation -->
+        <nav class="drawer-nav-tabs" aria-label="Study material categories">
+          <button class="drawer-tab-btn active" data-tab="overview">Overview</button>
+          <button class="drawer-tab-btn" data-tab="formulas">Formulas</button>
+          <button class="drawer-tab-btn" data-tab="definitions">Glossary</button>
+          <button class="drawer-tab-btn" data-tab="qa">Q&A</button>
+          <button class="drawer-tab-btn" data-tab="quiz">Quiz</button>
+        </nav>
+      </header>
+
+      <!-- Drawer Content Display -->
+      <main class="drawer-content-container" id="drawer-content-container">
+        
+        <!-- Tab: Overview -->
+        <section class="drawer-section active" id="drawer-overview-sec">
+          <!-- Rendered dynamically by app.js -->
+        </section>
+
+        <!-- Tab: Formulas -->
+        <section class="drawer-section" id="drawer-formulas-sec">
+          <!-- Rendered dynamically by app.js -->
+        </section>
+
+        <!-- Tab: Definitions -->
+        <section class="drawer-section" id="drawer-definitions-sec">
+          <!-- Rendered dynamically by app.js -->
+        </section>
+
+        <!-- Tab: Solved Q&A -->
+        <section class="drawer-section" id="drawer-qa-sec">
+          <!-- Rendered dynamically by app.js -->
+        </section>
+
+        <!-- Tab: Quick Quiz -->
+        <section class="drawer-section" id="drawer-quiz-sec">
+          <!-- Rendered dynamically by app.js -->
+        </section>
+        
+      </main>
+    </div>
+  </div>
+
+  <!-- Micro-delight Popup Toast Alert -->
+  <div class="toast-alert" id="toast-alert" role="alert" aria-live="polite">
+    Copied to study clipboard!
+  </div>
+
+  <!-- Premium Editorial Footer -->
+  <footer class="footer" id="main-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h4>NBF Grade 11 Study Companion</h4>
+          <p>Re-designing study notes to feel tactile, structured, and beautiful. Built for FBISE Class 11 learners with linked PDF resources.</p>
+        </div>
+        <div class="footer-column">
+          <h5>Core Subjects</h5>
+          <ul class="footer-links">
+            <li><a href="#" onclick="document.getElementById('subjects-section').scrollIntoView({behavior: 'smooth'})">Physics Notes</a></li>
+            <li><a href="#" onclick="document.getElementById('subjects-section').scrollIntoView({behavior: 'smooth'})">Mathematics Solutions</a></li>
+            <li><a href="#" onclick="document.getElementById('subjects-section').scrollIntoView({behavior: 'smooth'})">English Literature</a></li>
+            <li><a href="#" onclick="document.getElementById('subjects-section').scrollIntoView({behavior: 'smooth'})">Urdu Book PDF</a></li>
+            <li><a href="#" onclick="document.getElementById('subjects-section').scrollIntoView({behavior: 'smooth'})">Computer Science C Programming</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h5>Study Resources</h5>
+          <ul class="footer-links">
+            <li><a href="#toybox-section">Flashcard Recall Playground</a></li>
+            <li><a href="#updates-section">Syllabus Updates Feed</a></li>
+            <li><a href="#subjects-section">Comprehensive Solved Chapters</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 National Book Foundation Grade 11 Companion. Designed by Antigravity Senior UI Design Team.</span>
+        <span>Premium Editorial Educational Brand</span>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
+

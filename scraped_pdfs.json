@@ -1,0 +1,27 @@
+{
+  "computer": {
+    "sourceUrl": "https://studyplusplus.com/fbise/11/computer-science",
+    "bookUrl": "https://studyplusplus.com/fbise/books/11/computer-science",
+    "pdfUrl": "https://drive.google.com/uc?export=download&id=1PVAvm4EO4Y3pmwGZIcQKROQuqBbbldlP"
+  },
+  "english": {
+    "sourceUrl": "https://studyplusplus.com/fbise/11/english",
+    "bookUrl": "https://studyplusplus.com/fbise/books/11/english",
+    "pdfUrl": "https://drive.google.com/uc?export=download&id=1OEF2YPqOCWZ7Ncu40Dlx0NaMg2ncSzHa"
+  },
+  "maths": {
+    "sourceUrl": "https://studyplusplus.com/fbise/11/mathematics",
+    "bookUrl": "https://studyplusplus.com/fbise/books/11/mathematics",
+    "pdfUrl": "https://drive.google.com/uc?export=download&id=1Cm35MVLOHUK45FU9ln0FwJtwD3aB-I2f"
+  },
+  "urdu": {
+    "sourceUrl": "https://studyplusplus.com/fbise/11/urdu",
+    "bookUrl": "https://studyplusplus.com/fbise/books/11/urdu",
+    "pdfUrl": "https://drive.google.com/uc?export=download&id=11oFSOzvkSYldEjt5ivs1nFU8fmrPEWMI"
+  },
+  "physics": {
+    "sourceUrl": "https://studyplusplus.com/fbise/11/physics",
+    "bookUrl": "https://studyplusplus.com/fbise/books/11/physics",
+    "pdfUrl": "https://drive.google.com/uc?export=download&id=19LnFPExbX9riuukKbzeRBuinjP2_YBvI"
+  }
+}
